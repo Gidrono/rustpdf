@@ -1,0 +1,70 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/app",
+    "crates/ui",
+    "crates/document",
+    "crates/pdf-engine",
+    "crates/text-engine",
+    "crates/graphics",
+    "crates/pdf-lowlevel",
+    "crates/platform-macos",
+]
+default-members = ["crates/app"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["doxo contributors"]
+repository = "https://github.com/hanochgidron/doxo"
+
+[workspace.dependencies]
+# Workspace crates
+doxo-app = { path = "crates/app" }
+doxo-ui = { path = "crates/ui" }
+doxo-document = { path = "crates/document" }
+doxo-pdf-engine = { path = "crates/pdf-engine" }
+doxo-text-engine = { path = "crates/text-engine" }
+doxo-graphics = { path = "crates/graphics" }
+doxo-pdf-lowlevel = { path = "crates/pdf-lowlevel" }
+doxo-platform-macos = { path = "crates/platform-macos" }
+
+# UI / GPU
+eframe = { version = "0.31", default-features = false, features = [
+    "default_fonts",
+    "wgpu",
+] }
+egui = "0.31"
+egui_extras = { version = "0.31", features = ["image"] }
+wgpu = "24"
+
+# PDF
+pdfium-render = { version = "0.8", default-features = true, features = ["sync"] }
+lopdf = "0.34"
+pdf-writer = "0.12"
+
+# Text / fonts (Phase 2+; declared early for scaffolding)
+rustybuzz = "0.20"
+ttf-parser = "0.25"
+subsetter = "0.2"
+
+# Imaging / concurrency / hashing / serde
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+crossbeam-channel = "0.5"
+blake3 = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# App utilities
+rfd = "0.15"
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+parking_lot = "0.12"
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

@@ -1,0 +1,13 @@
+[package]
+name = "doxo-text-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Text shaping, font discovery, and PDF subset preparation"
+
+[dependencies]
+doxo-document = { workspace = true }
+rustybuzz = { workspace = true }
+ttf-parser = { workspace = true }
+subsetter = { workspace = true }
+serde = { workspace = true }

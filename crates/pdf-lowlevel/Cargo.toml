@@ -1,0 +1,18 @@
+[package]
+name = "doxo-pdf-lowlevel"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Low-level PDF helpers (lopdf / pdf-writer / flatten / page ops / atomic save)"
+
+[dependencies]
+doxo-document = { workspace = true }
+doxo-text-engine = { workspace = true }
+lopdf = { workspace = true }
+pdf-writer = { workspace = true }
+image = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+flate2 = "1"

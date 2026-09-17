@@ -1,0 +1,10 @@
+[package]
+name = "doxo-graphics"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Ink / vector graphics stubs (Phase 3+)"
+
+[dependencies]
+doxo-document = { workspace = true }
+serde = { workspace = true }

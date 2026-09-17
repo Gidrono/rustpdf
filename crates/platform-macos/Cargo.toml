@@ -1,0 +1,10 @@
+[package]
+name = "doxo-platform-macos"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "macOS platform helpers (PDFium path discovery, file UX)"
+
+[dependencies]
+anyhow = { workspace = true }
+tracing = { workspace = true }

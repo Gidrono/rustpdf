@@ -1,0 +1,11 @@
+[package]
+name = "doxo-document"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "PDF model and editor model for doxo (document state, edit journal stubs)"
+
+[dependencies]
+serde = { workspace = true }
+uuid = { workspace = true }
+thiserror = { workspace = true }

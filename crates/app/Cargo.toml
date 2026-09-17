@@ -1,0 +1,30 @@
+[package]
+name = "doxo-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "doxo PDF viewer / editor application entrypoint"
+default-run = "doxo"
+
+[[bin]]
+name = "doxo"
+path = "src/main.rs"
+
+[features]
+default = ["pdfium"]
+pdfium = ["doxo-pdf-engine/pdfium"]
+
+[dependencies]
+doxo-ui = { workspace = true }
+doxo-pdf-engine = { workspace = true }
+doxo-document = { workspace = true }
+doxo-platform-macos = { workspace = true }
+doxo-text-engine = { workspace = true }
+doxo-graphics = { workspace = true }
+doxo-pdf-lowlevel = { workspace = true }
+eframe = { workspace = true }
+egui = { workspace = true }
+egui_extras = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
